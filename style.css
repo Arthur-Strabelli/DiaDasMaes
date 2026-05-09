@@ -1,0 +1,313 @@
+/* style.css */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    overflow:hidden;
+    font-family:Arial, Helvetica, sans-serif;
+    background:black;
+
+    touch-action:none;
+}
+
+/* câmera */
+
+.camera{
+    width:100vw;
+    height:100vh;
+
+    overflow:hidden;
+
+    position:relative;
+
+    cursor:grab;
+}
+
+/* universo */
+
+.universo{
+    width:300vw;
+    height:300vh;
+
+    position:absolute;
+
+    background:
+    radial-gradient(circle at center,
+    #1d1042,
+    #050816 50%,
+    black 100%);
+}
+
+/* estrelas normais */
+
+.estrela{
+    position:absolute;
+
+    width:4px;
+    height:4px;
+
+    border-radius:50%;
+
+    background:white;
+
+    z-index:1;
+
+    animation: piscar 2s infinite alternate;
+}
+
+@keyframes piscar{
+
+    from{
+        opacity:0.3;
+    }
+
+    to{
+        opacity:1;
+    }
+
+}
+
+/* especiais */
+
+.especial{
+    width:20px;
+    height:20px;
+
+    border-radius:50%;
+
+    background:white;
+
+    position:absolute;
+
+    cursor:pointer;
+
+    z-index:10;
+
+    box-shadow:
+    0 0 10px white,
+    0 0 20px #8be9fd,
+    0 0 40px #ff79c6;
+
+    animation:
+    brilho 2s infinite alternate,
+    flutuar 4s infinite ease-in-out;
+}
+
+.especial.visitada{
+
+    background:#ff79c6;
+
+    box-shadow:
+    0 0 15px #ff79c6,
+    0 0 35px #ff79c6,
+    0 0 60px #ff79c6;
+}
+
+@keyframes brilho{
+
+    from{
+        transform:scale(1);
+    }
+
+    to{
+        transform:scale(1.3);
+    }
+
+}
+
+@keyframes flutuar{
+
+    0%{
+        transform:translateY(0px);
+    }
+
+    50%{
+        transform:translateY(-10px);
+    }
+
+    100%{
+        transform:translateY(0px);
+    }
+
+}
+
+/* progresso */
+
+.progresso-container{
+    position:fixed;
+
+    top:20px;
+    left:50%;
+
+    transform:translateX(-50%);
+
+    width:300px;
+    height:15px;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+    background:rgba(255,255,255,0.1);
+
+    z-index:9999;
+}
+
+.progresso-barra{
+    width:0%;
+    height:100%;
+
+    background:
+    linear-gradient(90deg,
+    #ff79c6,
+    #8be9fd);
+
+    transition:0.5s;
+}
+
+.progresso-texto{
+    position:fixed;
+
+    top:42px;
+    left:50%;
+
+    transform:translateX(-50%);
+
+    color:white;
+
+    z-index:9999;
+}
+
+/* modal */
+
+.modal{
+    position:fixed;
+    inset:0;
+
+    background:rgba(0,0,0,0.7);
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    opacity:0;
+    pointer-events:none;
+
+    transition:0.4s;
+
+    z-index:999;
+}
+
+.modal.ativo{
+    opacity:1;
+    pointer-events:all;
+}
+
+.card{
+    width:400px;
+    max-width:90%;
+
+    padding:30px;
+
+    border-radius:20px;
+
+    background:rgba(255,255,255,0.1);
+
+    backdrop-filter:blur(10px);
+
+    color:white;
+
+    position:relative;
+}
+
+.fechar{
+    position:absolute;
+
+    top:10px;
+    right:20px;
+
+    font-size:2rem;
+
+    cursor:pointer;
+}
+
+#modalImagem{
+    width:100%;
+    height:220px;
+
+    object-fit:cover;
+
+    border-radius:15px;
+
+    margin-bottom:20px;
+
+    display:none;
+}
+
+/* final */
+
+.final{
+    position:fixed;
+    inset:0;
+
+    background:rgba(0,0,0,0.9);
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    opacity:0;
+    pointer-events:none;
+
+    transition:1s;
+
+    z-index:10000;
+}
+
+.final.ativo{
+    opacity:1;
+    pointer-events:all;
+}
+
+.final-card{
+
+    padding:50px;
+
+    border-radius:30px;
+
+    background:
+    rgba(255,255,255,0.1);
+
+    backdrop-filter:blur(20px);
+
+    text-align:center;
+
+    color:white;
+}
+
+/* mobile */
+
+@media(max-width:768px){
+
+    .especial{
+        width:16px;
+        height:16px;
+    }
+
+    .card{
+        width:90%;
+    }
+
+    .progresso-container{
+        width:220px;
+    }
+
+    .final-card h1{
+        font-size:2rem;
+    }
+
+}
