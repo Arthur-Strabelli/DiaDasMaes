@@ -20,9 +20,11 @@ document.querySelectorAll('.especial');
 
 let estrelasVisitadas = 0;
 
-/* estrelas automáticas */
+/* =========================
+   ESTRELAS AUTOMÁTICAS
+========================= */
 
-for(let i = 0; i < 700; i++){
+for(let i = 0; i < 900; i++){
 
     const estrela = document.createElement('div');
 
@@ -38,20 +40,52 @@ for(let i = 0; i < 700; i++){
 
 }
 
-/* posição inicial */
+/* =========================
+   POSIÇÃO INICIAL
+========================= */
 
-let moverX = -window.innerWidth;
-let moverY = -window.innerHeight;
+let moverX;
+let moverY;
 
-universo.style.transform =
-`translate(${moverX}px, ${moverY}px)`;
+/* centraliza automático */
 
-/* arrastar */
+function centralizarUniverso(){
+
+    moverX =
+    -(universo.offsetWidth / 2) +
+    (window.innerWidth / 2);
+
+    moverY =
+    -(universo.offsetHeight / 2) +
+    (window.innerHeight / 2);
+
+    universo.style.transform =
+    `translate(${moverX}px, ${moverY}px)`;
+
+}
+
+window.addEventListener('load', ()=>{
+
+    centralizarUniverso();
+
+});
+
+window.addEventListener('resize', ()=>{
+
+    centralizarUniverso();
+
+});
+
+/* =========================
+   DRAG
+========================= */
 
 let pressionando = false;
 
 let inicioX = 0;
 let inicioY = 0;
+
+/* mouse */
 
 camera.addEventListener('mousedown', (e)=>{
 
@@ -117,7 +151,9 @@ window.addEventListener('touchmove', (e)=>{
 
 });
 
-/* limitar */
+/* =========================
+   LIMITES
+========================= */
 
 function limitar(){
 
@@ -148,7 +184,9 @@ function limitar(){
 
 }
 
-/* clique estrelas */
+/* =========================
+   CLIQUE NAS ESTRELAS
+========================= */
 
 especiais.forEach((estrela)=>{
 
@@ -189,7 +227,9 @@ especiais.forEach((estrela)=>{
 
 });
 
-/* fechar modal */
+/* =========================
+   FECHAR MODAL
+========================= */
 
 fechar.addEventListener('click', ()=>{
 
@@ -207,7 +247,9 @@ modal.addEventListener('click', (e)=>{
 
 });
 
-/* progresso */
+/* =========================
+   PROGRESSO
+========================= */
 
 function atualizarProgresso(){
 
@@ -233,7 +275,9 @@ function atualizarProgresso(){
 
 }
 
-/* final */
+/* =========================
+   FINAL
+========================= */
 
 function mostrarMensagemFinal(){
 
