@@ -1,4 +1,4 @@
-// script.js
+
 
 const universo = document.getElementById('universo');
 const camera = document.querySelector('.camera');
@@ -20,9 +20,7 @@ document.querySelectorAll('.especial');
 
 let estrelasVisitadas = 0;
 
-/* =========================
-   ESTRELAS AUTOMÁTICAS
-========================= */
+
 
 for(let i = 0; i < 900; i++){
 
@@ -40,14 +38,11 @@ for(let i = 0; i < 900; i++){
 
 }
 
-/* =========================
-   POSIÇÃO INICIAL
-========================= */
 
 let moverX;
 let moverY;
 
-/* centraliza automático */
+
 
 function centralizarUniverso(){
 
@@ -76,16 +71,13 @@ window.addEventListener('resize', ()=>{
 
 });
 
-/* =========================
-   DRAG
-========================= */
+
 
 let pressionando = false;
 
 let inicioX = 0;
 let inicioY = 0;
 
-/* mouse */
 
 camera.addEventListener('mousedown', (e)=>{
 
@@ -117,7 +109,7 @@ window.addEventListener('mousemove', (e)=>{
 
 });
 
-/* touch */
+
 
 camera.addEventListener('touchstart', (e)=>{
 
@@ -151,9 +143,7 @@ window.addEventListener('touchmove', (e)=>{
 
 });
 
-/* =========================
-   LIMITES
-========================= */
+
 
 function limitar(){
 
@@ -184,9 +174,7 @@ function limitar(){
 
 }
 
-/* =========================
-   CLIQUE NAS ESTRELAS
-========================= */
+
 
 especiais.forEach((estrela)=>{
 
@@ -227,9 +215,7 @@ especiais.forEach((estrela)=>{
 
 });
 
-/* =========================
-   FECHAR MODAL
-========================= */
+
 
 fechar.addEventListener('click', ()=>{
 
@@ -247,9 +233,7 @@ modal.addEventListener('click', (e)=>{
 
 });
 
-/* =========================
-   PROGRESSO
-========================= */
+
 
 function atualizarProgresso(){
 
@@ -275,9 +259,7 @@ function atualizarProgresso(){
 
 }
 
-/* =========================
-   FINAL
-========================= */
+
 
 function mostrarMensagemFinal(){
 

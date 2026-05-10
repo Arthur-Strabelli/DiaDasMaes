@@ -1,4 +1,4 @@
-/* style.css */
+
 
 *{
     margin:0;
@@ -19,9 +19,7 @@ body{
     touch-action:none;
 }
 
-/* =========================
-   CAMERA
-========================= */
+
 
 .camera{
     width:100vw;
@@ -34,9 +32,6 @@ body{
     cursor:grab;
 }
 
-/* =========================
-   UNIVERSO
-========================= */
 
 .universo{
     position:absolute;
@@ -54,9 +49,7 @@ body{
     black 100%);
 }
 
-/* =========================
-   ESTRELAS NORMAIS
-========================= */
+
 
 .estrela{
     position:absolute;
@@ -87,9 +80,7 @@ body{
 
 }
 
-/* =========================
-   ESTRELAS ESPECIAIS
-========================= */
+
 
 .especial{
     position:absolute;
@@ -154,9 +145,6 @@ body{
 
 }
 
-/* =========================
-   PROGRESSO
-========================= */
 
 .progresso-container{
     position:fixed;
@@ -203,9 +191,20 @@ body{
     z-index:9999;
 }
 
-/* =========================
-   MODAL
-========================= */
+.texto{
+    position:fixed;
+
+    top:70px;
+    left:50%;
+
+    transform:translateX(-50%);
+
+    color:white;
+
+    z-index:9999;
+}
+
+
 
 .modal{
     position:fixed;
@@ -271,9 +270,7 @@ body{
     display:none;
 }
 
-/* =========================
-   FINAL
-========================= */
+
 
 .final{
     position:fixed;
@@ -314,9 +311,7 @@ body{
     color:white;
 }
 
-/* =========================
-   RESPONSIVO
-========================= */
+
 
 @media(max-width:768px){
 
